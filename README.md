@@ -11,4 +11,6 @@ In the first way, if we missed the accessToken, the service will return 400 Bad 
 In the second way, if we missed the accessToken, the service will return 401 Unauthorized.
 Both will return 429 Too Many Requst if the request exceed the limitation we set for each token.
 
-
+The image address: https://hub.docker.com/r/windwolves/demo1
+Command to run this image: docker run -e accessThreshold=2 -e intervalThreshold=2000 -p 8080:8080 -t windwolves/demo1
+The accessThreshold and intervalThreshold can be configurated in command.
