@@ -16,11 +16,16 @@ Command to run this image: docker run -e accessThreshold=2 -e intervalThreshold=
 The accessThreshold and intervalThreshold can be configurated in command.
 
 #demo2
+
 I have merged the SMS service into this project.
 In the SMS demo, it will send message via textLocal or twilio APIs. 
+
 The endPoint is "/api/rest/sms".
+
 The sample payload looks like this: 
+
 { "message" : "Test", "targetNumbers" :[1,2], "sender" : "LD" }
+
 And please set the content-type to application/json. 
 In the payload:
 The message is what you want to send and it's mandatory. 
