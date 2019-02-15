@@ -14,3 +14,22 @@ Both will return 429 Too Many Requst if the request exceed the limitation we set
 Image address: https://hub.docker.com/r/windwolves/demo1
 Command to run this image: docker run -e accessThreshold=2 -e intervalThreshold=2000 -p 8080:8080 -t windwolves/demo1
 The accessThreshold and intervalThreshold can be configurated in command.
+
+#demo2
+I have merged the SMS service into this project.
+In the SMS demo, it will send message via textLocal or twilio APIs. 
+The endPoint is "/api/rest/sms".
+The sample payload looks like this: 
+{ "message" : "Test", "targetNumbers" :[1,2], "sender" : "LD" }
+And please set the content-type to application/json. 
+In the payload:
+The message is what you want to send and it's mandatory. 
+The targetNumbers are the list of the numbers you want to send message to, you can set only one number in the list if you only want to send message to one, and it should contains at least one number. 
+The sender is optional and it will be shown in the message if the message are sent via textLocal.
+
+The message sending logic behind is that: At first, we try send the message via textLocal and get the response from textLocal, if there still some targets are failed to be sent, then will try using the twilio to send the message to the remaining targets.
+
+Image address: https://cloud.docker.com/repository/docker/windwolves/demo2
+Command to run this image: docker run -p 8080:8080 -t windwolves/demo2
+Also you can set the configs like (-e accessThreshold=2 -e intervalThreshold=2000) if you want to test the Throttler service as well. 
+
