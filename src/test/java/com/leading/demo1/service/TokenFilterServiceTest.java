@@ -1,7 +1,6 @@
-package service;
+package com.leading.demo1.service;
 
 import com.leading.demo1.configuration.Configuration;
-import com.leading.demo1.service.TokenFilterService;
 import com.leading.demo1.token.AccessToken;
 import org.junit.Before;
 import org.junit.Test;
