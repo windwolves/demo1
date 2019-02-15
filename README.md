@@ -24,7 +24,7 @@ The endPoint is "/api/rest/sms".
 
 The sample payload looks like this: 
 
-{ "message" : "Test", "targetNumbers" :[1,2], "sender" : "LD" }
+{ "message" : "Test", "targetNumbers" :[+86180********, +86181********], "sender" : "LD" }
 
 And please set the content-type to application/json. 
 In the payload:
